@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Experimental Page Layout Inspired by Flipboard</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="description" content="Experimental Page Layout Inspired by Flipboard" />
+        <meta name="keywords" content="flip, pages, flipboard, layout, responsive, web, web design, grid, ipad, jquery, css3, 3d, perspective, transitions, transform" />
+        <meta name="author" content="" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link href="http://vjs.zencdn.net/4.11/video-js.css" rel="stylesheet">
+		<script src="http://vjs.zencdn.net/4.11/video.js"></script>
+		<style type="text/css">
+  .vjs-default-skin { color: #d97e7e; }
+		</style>
+
+		<script type="text/javascript" src="js/modernizr.custom.08464.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="js/lightbox.js"></script>
+		<link href="css/lightbox.css" rel="stylesheet" />
+		<script id="pageTmpl" type="text/x-jquery-tmpl">
+			<div class="${theClass}" style="${theStyle}">
+				<div class="front">
+					<div class="outer">
+						<div class="content" style="${theContentStyleFront}">
+							<div class="inner">{{html theContentFront}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="back">
+					<div class="outer">
+						<div class="content" style="${theContentStyleBack}">
+							<div class="inner">{{html theContentBack}}</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</script>
+    </head>
+    <body>
+	
+		
+		<div id="flip" class="container">
+		
+			<div class="f-page f-cover">
+				<div class="cover-elements">
+					<div class="logo">
+						&nbsp;Zensar
+					</div>
+					
+					<div class="f-cover-story"><span>Case Studies</span>Selected cases from our global customers</div>
+				</div>
+				<div class="f-cover-flip">&lt; Flip</div>
+			</div>
+			
+			<div class="f-page">	
+
+
+				<div class="f-title">
+				<h2 class="keyline">M-commerce in South-Africa</h2>
+				</div>
+
+				<div class="box w-35 h-100 box-b-r">
+				<div class="headimage">
+				
+				<p><img class="banner" src="images/iphonescreen.png" alt="Smiley face" height="42" width="42">
+				</p>
+				
+				</div>
+				</div>
+
+				<div class="box w-65 h-100">
+
+					<div class="box w-100 h-25">
+					<h3 class="summ"> Improved business through strategizing and executing m-Commerce for a leading E-retailer in South Africa.</h3>
+					</div>
+
+
+					<div class="box w-33 h-23">
+						<h3 class="num1">35%</h3>
+						<h3 class="com"> Increase in site usage</h3>
+					</div>
+
+					<div class="box w-33 h-23">
+						<h3 class="num2">2000+</h3>
+						<h3 class="com"> Purchases per day</h3>
+					</div>
+
+					<div class="box w-33 h-23">
+						<h3 class="num3">10%</h3>
+						<h3 class="com"> Increase in new user visits</h3>
+					</div>
+
+
+					<div class="box w-100 h-27">
+						<ul class="point">
+							<h3 class="sold">Solution Highlights</h3>
+							<li>Implementation of Recommendation Engine, .Implementation of Recommendation Engine. </li>
+							<li>Created a one-stop-shot website for all flowers and gifting options.</li>
+							<li>Implementation of Recommendation Engine,Implementation of Recommendation Engine,Created a one-stop-shot website for all flowers and gifting options. </li>
+						</ul>
+					</div>
+
+
+					<div class="box w-100 h-25">
+					<blockquote class="style4"><span>“I am really happy that we are up and running and getting some orders and that I
+					think it looks great that Zensar did a great job with it. I am excited to get going with
+					the shopping basket and Zensar revolutionizing the way we manage the process”.<br><p class="man"> - Managing Director </p><br><a href="images/mov_bbb.mp4" data-lightbox="Player" data-title="My caption"class="man1"><img class="idle" src="images/play.png" alt="Smiley face">&nbsp;&nbsp;&nbsp;Play testimonial</a></span></blockquote>
+					</div>
+					</div>
+			</div>
+			
+						<div class="f-page">	
+
+
+				<div class="f-title">
+				<h2 class="keyline">M-commerce in South-Africa</h2>
+				</div>
+				<div class="box w-35 h-100 box-b-r">
+				<div class="headimage">
+				<p><img class="banner" src="images/iphonescreen.png" alt="Smiley face" height="42" width="42">
+				</p>
+				
+				</div>
+				</div>
+
+				<div class="box w-65 h-100">
+
+					<div class="box w-100 h-25">
+					<h3 class="summ"> Improved business through strategizing and executing m-Commerce for a leading E-retailer in South Africa.</h3>
+					</div>
+
+
+					<div class="box w-33 h-23">
+						<h3 class="num1">35%</h3>
+						<h3 class="com"> Increase in site usage</h3>
+					</div>
+
+					<div class="box w-33 h-23">
+						<h3 class="num2">2000+</h3>
+						<h3 class="com"> Purchases per day</h3>
+					</div>
+
+					<div class="box w-33 h-23">
+						<h3 class="num3">10%</h3>
+						<h3 class="com"> Increase in new user visits</h3>
+					</div>
+
+
+					<div class="box w-100 h-27">
+						<ul class="point">
+							<h3 class="sold">Solution Highlights</h3>
+							<li>Implementation of Recommendation Engine, .Implementation of Recommendation Engine. </li>
+							<li>Created a one-stop-shot website for all flowers and gifting options.</li>
+							<li>Implementation of Recommendation Engine,Implementation of Recommendation Engine,Created a one-stop-shot website for all flowers and gifting options. </li>
+						</ul>
+					</div>
+
+
+					<div class="box w-100 h-25">
+					<blockquote class="style4"><span>“I am really happy that we are up and running and getting some orders and that I
+					think it looks great that Zensar did a great job with it. I am excited to get going with
+					the shopping basket and Zensar revolutionizing the way we manage the process”.<br><p class="man"> - Managing Director </p><br><a href="images/mov_bbb.mp4" data-lightbox="Player" data-title="My caption"class="man1"><img class="idle" src="images/play.png" alt="Smiley face">&nbsp;&nbsp;&nbsp;Play testimonial</a></span></blockquote>
+					</div>
+					</div>
+			</div>
+			
+			
+			
+			<div class="f-page f-cover-back">
+				<div id="codrops-ad-wrapper">
+					
+				</div>
+			</div>
+		</div>
+	
+		
+		<script type="text/javascript">
+				
+			var $container 	= $( '#flip' ),
+				$pages		= $container.children().hide();
+			
+			Modernizr.load({
+				test: Modernizr.csstransforms3d && Modernizr.csstransitions,
+				yep : ['js/jquery.tmpl.min.js','js/jquery.history.js','js/core.string.js','js/jquery.touchSwipe-1.2.5.js','js/jquery.flips.js'],
+				nope: 'css/fallback.css',
+				callback : function( url, result, key ) {
+					
+					if( url === 'css/fallback.css' ) {
+						$pages.show();
+					}
+					else if( url === 'js/jquery.flips.js' ) {
+						$container.flips();
+					}
+			
+				}
+			});
+				
+		</script>
+    </body>
+</html>

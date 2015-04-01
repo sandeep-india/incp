@@ -1,0 +1,150 @@
+body{
+	font-family: 'Open Sans Condensed','Arial Narrow', serif;
+	font-weight: 400;
+	background-color: #ffffff;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+.keyline{
+	color:#000000 !important;
+	text-align: left;
+	font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+	text-align: center;
+}
+
+.banner{
+	
+	padding-top: 50px !important;
+	width:90% !important;
+	margin-left: 5%;
+	height: auto !important;
+
+
+}
+
+.num1{
+	 
+	padding: 10px 0px;
+	margin: 0;
+	font-size: 30px !important;
+	vertical-align: top !important;
+	text-align: center !important;
+	color:#ffffff;
+	background-color: #a7a37e;
+}
+
+.num2{
+	
+	padding: 10px 0px;
+	margin: 0;
+	font-size: 30px !important;
+	vertical-align: top !important;
+	text-align: center !important;
+	color:#ffffff;
+	background-color: #046380;
+}
+
+.num3{
+	
+	padding: 10px 0px;
+	margin: 0;
+	font-size: 30px !important;
+	vertical-align: top !important;
+	text-align: center !important;
+	color:#ffffff;
+	background-color: #002f2f;
+}
+
+
+.com{
+	padding: 0px 0px !important;
+	font-size: 25px !important;
+	text-align: center !important;
+	color:#000000;
+	margin-top: 5px !important;
+	/*margin-left: -5px !important;*/
+}
+
+.summ{
+	padding: 10px 0px;
+	margin: 0;
+	font-size: 45px !important;
+	vertical-align: top !important;
+	color: #000000;
+	font-weight: 600;
+}
+
+.point{
+	font-size: 23px !important;
+	width:100%;
+	margin-top: 0px;
+	color:#000000;
+	font-weight: 400;
+}
+
+.sold{
+	padding: 10px 0px;
+	padding-bottom: 20px;
+	margin: 0;
+	font-size: 40px !important;
+	vertical-align: top !important;
+	color: #000000;
+	text-align:left;
+	font-weight: 500;
+}
+
+blockquote.style4 {
+  font: 20px/30px italic Times, serif;
+  padding-left: 70px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 10px;
+  background-color: #efecca;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: 5px;
+  background-image: url(../images/openquote4.gif);
+  background-position: middle left;
+  background-repeat: no-repeat;
+  text-indent: 23px;
+  height: 200px !important;
+}
+
+.idle{
+	width:40px !important;
+	height:40px !important;
+	vertical-align: middle;
+	margin-left: -50px!important;
+	opacity: 0.7;
+}
+
+
+.man{
+	font-size:20px !important;
+	color:#000000 !important;
+	text-align:right !important;
+	padding-right: 30px !important;
+	padding-top: 15px !important;
+	display: inline-block; !important;
+	float: right;
+	height:50px;
+}
+
+
+.man1{
+	font-size:20px !important;
+	color:#000000 !important;
+	text-align:left !important;
+	display: inline-block !important;
+	vertical-align: center;
+	display: inline-block !important;
+	float: left;
+	
+}
+.idle:hover{
+	zoom:1.2;
+	opacity: 1;
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cases.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style2.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/lightbox.js"></script>
+    <link href="/static/css/lightbox.css" rel="stylesheet">
+    <style>
+    
+    <style>
+      ::-webkit-scrollbar { 
+          display: none; 
+      }
+    </style>
+
+  </head>
+  <body>
+      <% feed.forEach(function(foo) { %>
+        <div class="col-md-10 col-md-offset-1">
+          <blockquote class="style4"><span>
+                "<%= foo.feedback %>"<br>
+                <p class="man"><%= foo.email %><p class="man"> - <%= foo.name %> </p> </p>
+              </span>
+            </blockquote>
+       </div>
+      <% }); %>
+
+   <script>
+     
+     console.log('hello');
+     
+     // $('a').on('mousedown', function(){
+     //  console.log('hello1');
+     //  $('body').click();
+     // });
+
+     function refresh(){
+      console.log('hinderance');
+      location.reload();
+     }
+
+
+    </script>
+  </body>
+</html>

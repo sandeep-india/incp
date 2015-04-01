@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Radin6 config dash.</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+  
+    <div class="container">
+      <h1>Topic profile toggle</h1>
+      <br>
+      <br>
+        <div class="row">
+          <div class="alert alert-info" id="notif" role="alert">Heads up! This alert needs your attention, but it's not super important.</div>
+          <div class="col-md-5" id="maindiv">
+          
+          <% tp.forEach(function(foo){ %>
+         
+          <div class="boxed" id="div<%= foo.id %>">
+            
+            <p><input type="radio" id='in<%=foo.id%>' name="sandeep" value="<%=foo.id%>"><%=foo.name%></p> 
+
+            <a style="float:right" id="del<%= foo.id%>" class="btn btn-default" href="#" role="button"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+
+            <br>
+            <br>
+
+            <table class="table">
+                <tr>
+                  <td>id1</td>    
+                  <td><%= foo.id1%></td>
+                </tr>
+                <tr>
+                  <td>id2</td>    
+                  <td><%= foo.id2%></td>
+                </tr>
+                <tr>
+                  <td>id3</td>    
+                  <td><%= foo.id3%></td>
+                </tr>
+                <tr>
+                  <td>id4</td>    
+                  <td><%= foo.id4%></td>
+                </tr>
+                <tr>
+                  <td>id5</td>    
+                  <td><%= foo.id5%></td>
+                </tr>
+                <tr>
+                  <td>id6</td>    
+                  <td><%= foo.id6%></td>
+                </tr>
+                <tr>
+                  <td>id7</td>    
+                  <td><%= foo.id7%></td>
+                </tr>
+                <tr>
+                  <td>id8</td>    
+                  <td><%= foo.id8%></td>
+                </tr>                                                
+            </table>
+          </div>
+          <% }); %>
+        </div>
+
+
+        <div class="col-md-offset-2 col-md-5">
+
+          <form>
+
+            <div class="form-group">
+              <label for="name">name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter Id1">
+            </div>
+          
+            <div class="form-group">
+              <label for="Id1">Id1 - All Brands</label>
+              <input type="text" class="form-control" id="Id1" placeholder="Enter Id1">
+            </div>
+
+            <div class="form-group">
+              <label for="Id2">Id2 - Brand</label>
+              <input type="text" class="form-control" id="Id2" placeholder="Enter Id2">
+            </div>
+
+            <div class="form-group">
+              <label for="Id3">Id3 - Competitor1</label>
+              <input type="text" class="form-control" id="Id3" placeholder="Enter Id3">
+            </div>
+
+            <div class="form-group">
+              <label for="Id4">Id4 - Competitor2</label>
+              <input type="text" class="form-control" id="Id4" placeholder="Enter Id4">
+            </div>
+
+            <div class="form-group">
+              <label for="Id5">Id5 - All Services</label>
+              <input type="text" class="form-control" id="Id5" placeholder="Enter Id5">
+            </div>
+
+            <div class="form-group">
+              <label for="Id6">Id6 - Service1</label>
+              <input type="text" class="form-control" id="Id6" placeholder="Enter Id6">
+            </div>
+
+            <div class="form-group">
+              <label for="Id7">Id7 - Service2</label>
+              <input type="text" class="form-control" id="Id7" placeholder="Enter Id7">
+            </div>
+
+            <div class="form-group">
+              <label for="Id8">Id8 - Service3</label>
+              <input type="text" class="form-control" id="Id8" placeholder="Enter Id8">
+            </div>
+
+            <a id="send" class="btn btn-default">Submit</a>
+
+          </form>
+
+          </div>
+       </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript">
+
+      $("#notif").hide();
+
+   //=======================================  checked call ==================================
+
+        $.ajax( {
+          url: 'http://10.42.4.135:8000/' + 'api/tp',
+          type: 'GET',
+          processData: false,
+          contentType: false,
+          success : function(r) {
+            var id = "";
+            var high=0;
+            for (var i=0;i<r.length;i++){
+
+              var p = parseInt(r[i].recent);
+              if(high < p){
+                  high = p;
+                  id = r[i]._id;                
+              }
+            }
+
+            str = "#in"+id;
+            $(str).prop('checked', true);
+            },
+
+            error : function(err_data) {
+            console.log(err_data);
+              $("#notif").hide();
+              alert("Please check your internet connection");
+              $("#notif").show();
+            }} );
+
+
+
+    //======================================== Delete =======================================
+    //e2 templates.
+    <% tp.forEach(function(foo){ %>
+    $('#del<%=foo.id%>').click(function(){
+      console.log("deleting!!!");
+       if($('#in<%= foo.id%>').is(':checked')) 
+        { alert("Kindly uncheck the option before deleting"); }
+       else{
+          $("#notif").hide();
+          $("#notif").html('Requesting delete..');
+          $("#notif").show();
+          $.ajax( {
+          url: 'http://10.42.4.135:8000/' + 'api/tp/<%= foo.id%>',
+          type: 'DELETE',
+          processData: false,
+          contentType: false,
+          success : function(r) {
+            $("#notif").hide();
+            $("#notif").html('Successfully deleted!');
+            $("#notif").show();
+            $("#div<%=foo.id%>").hide();
+            },
+
+            error : function(err_data) {
+            console.log(err_data);
+              $("#notif").hide();
+              $("#notif").html('something went wrong, please reload the page and try again!');
+              $("#notif").show();
+            }} );
+
+                 }
+    });
+
+            //in ajax call block line below    
+            //$("#notif").hide();
+            //$("#notif").html('Requesting delete..');
+            //$("#notif").show();
+
+            //in success block
+            //$("#notif").hide();
+            //$("#notif").html('Successfully deleted!');
+            //$("#notif").show();
+            //#("#div1").hide()
+
+            //in failure block
+            //$("#notif").hide();
+            //$("#notif").html('something went wrong, please reload the page and try again!');
+            //$("#notif").show();
+
+
+
+    <% }); %>
+
+    //======================================== Radio button =================================
+      // e2 template.
+      <% tp.forEach(function(foo){ %>
+      $('#in<%=foo.id%>').click(function(){
+
+          $("#notif").hide();
+          $("#notif").html('toggling the topic profile....');
+          $("#notif").show();
+          $.ajax( {
+          url: 'http://10.42.4.135:8000/' + 'api/tp/<%= foo.id%>',
+          type: 'PUT',
+          processData: false,
+          contentType: false,
+          success : function(r) {
+            $("#notif").hide();
+            $("#notif").html('Successfully toggled!');
+            $("#notif").show();
+            },
+
+            error : function(err_data) {
+            console.log(err_data);
+              $("#notif").hide();
+              $("#notif").html('something went wrong, please reload the page and try again!');
+              $("#notif").show();
+            }} );
+          });
+
+            //in ajax call block line below    
+            //$("#notif").hide();
+            //$("#notif").html('toggling the topic profile....');
+            //$("#notif").show();
+
+            
+            //in success block
+            //$("#notif").hide();
+            //$("#notif").html('Successfully toggled!');
+            //$("#notif").show();
+
+
+
+            //in failure block
+            //$("#notif").hide();
+            //$("#notif").html('something went wrong, please reload the page and try again!');
+            //$("#notif").show();
+      
+      <% }); %>
+
+
+
+
+    //=========================================== Form ======================================
+
+    $("#send").click(function(){
+
+        $("#notif").hide()
+          if($("#Id1").val() === '' || $("#Id2").val() === '' || $("#Id3").val() === '' || $("#Id4").val() === '' ||  $("#Id5").val() === ''||  $("#Id6").val() === ''||  $("#Id7").val() === ''||  $("#Id8").val() === ''|| $("#name").val() === ''){
+              $("#notif").html('Kindly fill all the feilds before submitting');
+              $("#notif").show();}
+
+          else {
+            var formElement = document.getElementById("caseForm");
+            var fd = new FormData(formElement);
+            fd.append('id1',($("#Id1").val()));
+            fd.append('id2',($("#Id2").val()));
+            fd.append('id3',($("#Id3").val()));
+            fd.append('id4',($("#Id4").val()));
+            fd.append('id5',($("#Id5").val()));
+            fd.append('id6',($("#Id6").val()));
+            fd.append('id7',($("#Id7").val()));
+            fd.append('id8',($("#Id8").val()));
+            fd.append('name',($("#name").val()));
+            $("#notif").hide();
+            $("#notif").html('Requesting....');
+            $("#notif").show();
+
+          $.ajax( {
+          url:  'http://10.42.4.135:8000/' + 'api/tp/',
+          type: 'POST',
+          data: fd,
+          processData: false,
+          contentType: false,
+
+          success : function(r) {
+            $("#Id1").val('');
+            $("#Id2").val('');
+            $("#Id3").val('');
+            $("#Id4").val('');
+            $("#Id5").val('');
+            $("#Id6").val('');
+            $("#Id7").val('');
+            $("#Id8").val('');
+            $("#name").val('');
+
+
+            $("#notif").hide();
+            $("#notif").html('Success!!');
+            $("#notif").show();
+            var str = '<div class="boxed" id="div'+r._id+'">'+
+            '<p><input type="radio" id="in'+r._id+'" name="sandeep" value="'+r._id+'">'+r.name+'</p>'+
+            '<a style="float:right" id="del'+r._id+'" class="btn btn-default" href="#" role="button"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a><br><br>' + '<table class="table">'+ '<tr><td>id1</td><td>'+r.id1+'</td></tr>'+ '<tr><td>id2</td><td>'+r.id2+'</td></tr>'+'<tr><td>id3</td><td>'+r.id3+'</td></tr>'+'<tr><td>id4</td><td>'+r.id4+'</td></tr>'+'<tr><td>id5</td><td>'+r.id5+'</td></tr>'+'<tr><td>id6</td><td>'+r.id6+'</td></tr>'+'<tr><td>id7</td><td>'+r.id7+'</td></tr>'+'<tr><td>id8</td><td>'+r.id8+'</td></tr>'+ '</table></div>' + '<script>' +'$("#del'+r._id+'").click(function(){if($("#in'+r._id+'").is(":checked")){ alert("Kindly uncheck the option before deleting"); } else{ $("#notif").hide(); $("#notif").html("Requesting delete..");$("#notif").show();$.ajax( {url: "http://10.42.4.135:8000/" + "api/tp/'+r._id+'",type: "DELETE", processData: false,contentType: false,success : function(r) {$("#notif").hide();$("#notif").html("Successfully deleted!");$("#notif").show();$("#div'+r._id+
+              '").hide();},error : function(err_data) {console.log(err_data);$("#notif").hide();$("#notif").html("something went wrong, please reload the page and try again!");$("#notif").show();}} );}});'+'$("#in'+r._id+'").click(function(){$("#notif").hide();$("#notif").html("toggling the topic profile....");$("#notif").show();$.ajax( {url: "http://10.42.4.135:8000/" + "api/tp/'+r._id+'",type: "PUT",processData: false,contentType: false,success : function(r) {$("#notif").hide();$("#notif").html("Successfully toggled!");$("#notif").show();},error : function(err_data) {console.log(err_data);$("#notif").hide();$("#notif").html("something went wrong, please reload the page and try again!");$("#notif").show();}} );});'+"<"+"/"+"script"+">"
+
+            $('#maindiv').prepend(str);
+            console.log(str);
+            },
+
+
+            error : function(err_data) {
+            console.log(err_data);
+            $("#notif").hide();
+            $("#notif").html('Request failed please try again!!');
+            $("#notif").show();
+            }} );
+}
+});
+
+
+
+
+    </script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cases.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/lightbox.js"></script>
+    <link href="css/lightbox.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-4">
+        <h2 class="keyline"><%= name %></h2>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-4">
+        <p><img src="images/<%= bannerName %>" alt="Smiley face" height="42" width="42" class="banner"></p>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h3 class="summ"><%= summary %></h3>
+          </div>
+        </div><br><br><br>
+        <div class="row">
+          <div class="col-md-3 col-md-offset-1">
+            <h3 class="num1"><%= nbb1_num %></h3>
+            <h3 class="com"><%= nbb1_txt %></h3>
+          </div>
+          <div class="col-md-3">
+            <h3 class="num1"><%= nbb2_num %></h3>
+            <h3 class="com"><%= nbb2_txt %></h3>
+          </div>
+          <div class="col-md-3">
+            <h3 class="num1"><%= nbb3_num %></h3>
+            <h3 class="com"><%= nbb3_txt %></h3>
+          </div>
+        </div><br><br><br>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <ul class="point">
+              <h3 class="sold">Solution Highlights</h3>
+              <%= sol_high %>
+            </ul>
+          </div>
+        </div><br><br><br>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <blockquote class="style4"><span>
+                "<%= feedback %>"<br>
+                <p class="man"> - <%= designation %> </p><%if (videoName.length > 0) { %><br><a href="images/<%= videoName %>" data-lightbox="Player" data-title="My caption" class="man1"><img src="images/play.png" alt="Smiley face" class="idle">Play testimonial</a><% } %></span></blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

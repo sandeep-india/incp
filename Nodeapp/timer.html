@@ -1,0 +1,43 @@
+<html>
+<head>
+
+</head>
+<body>
+	<p id="text" style="font-size:50px"></p>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="jquery.timer.js"></script>
+	<script>
+
+		// Start loading animation.
+		
+		// Get auth_token on load.
+	    // Initialise with data structures to save data.
+	    // Fire the first round the ajax calls to collect data and fill it in the datastructures.
+	    
+	    // Stop loading animation.
+
+		//Fire the ajax calls in a timer every 15 mins to collect data and rewrite the data in data structures starting with the end of initial call.
+
+		// Start the UI Slide-show after the end of loading animations.
+
+
+		var i = 0;
+		var slide_timer = [60000,120000,60000,60000,60000,60000,60000];
+
+		var timer = $.timer(function() {
+   			i++;
+
+   			if ( i > 7 ){
+   				i = 1;
+   			}
+   			
+   			$('#text').html(i.toString()).fadeIn('fast');
+		});
+
+		timer.set({ time: slide_timer[i-1] , autostart : true });
+
+
+
+	</script>
+</body>
+</html>

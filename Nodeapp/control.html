@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <title>LFD Controller</title>
+  </head>
+  <body>
+    <a href="#" id="Play">Pause</a>
+    <a href="#" id="One">One</a>
+    <a href="#" id="Two">Two</a>
+    <a href="#" id="Three">Three</a>
+    <a href="#" id="Four">Four</a>
+    <a href="#" id="Five">Five</a>
+    <a href="#" id="Six">Six</a>
+    <a href="#" id="Seven">Condensed</a>
+    <hr>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+//var socket = io();
+var socket = io.connect('http://localhost:8000/');
+
+
+  $('#Play').click(function(){
+
+ 
+
+
+    if ($('#Play').html() === "Play")
+
+    {
+          socket.emit('chat message','play');
+          $('#Play').html('Pause').fadeIn('fast');
+    }
+    else{
+          socket.emit('chat message','pause');
+          $('#Play').html('Play').fadeIn('fast');
+    }
+
+  });
+
+
+  $('#One').click(function(){
+      socket.emit('chat message','1');
+      $('#Play').html('Play').fadeIn('fast');
+  });
+
+  $('#Two').click(function(){
+      socket.emit('chat message','2');
+      $('#Play').html('Play').fadeIn('fast');
+  });
+
+  $('#Three').click(function(){
+      socket.emit('chat message','3');
+      $('#Play').html('Play').fadeIn('fast');
+  });
+
+  $('#Four').click(function(){
+      socket.emit('chat message','4');
+      $('#Play').html('Play').fadeIn('fast');
+  });
+
+  $('#Five').click(function(){
+      socket.emit('chat message','5');
+      $('#Play').html('Play').fadeIn('fast');
+
+  });
+
+  $('#Six').click(function(){
+      socket.emit('chat message','6');
+      $('#Play').html('Play').fadeIn('fast');
+  });
+
+  $('#Seven').click(function(){
+      socket.emit('chat message','7');
+      $('#Play').html('Play').fadeIn('fast');
+  });
+
+  socket.on('chat message', function(msg){
+    //do nothing
+  });
+
+</script>
+  </body>
+</html>

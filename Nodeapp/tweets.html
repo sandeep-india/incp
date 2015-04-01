@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>LFD</title>
+    <style>
+      #text{
+        font-size:500px;
+        line-height: 0px;
+        margin-top: 250px;
+        margin-bottom: 250px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p id="text">1</p>
+<!--     <div class="group">
+    <p style="font-size:200" id="One">1</p>
+    <p style="font-size:200" id="Two">2</p>
+    <p style="font-size:200" id="Three">3</p>
+    <p style="font-size:200" id="Four">4</p>
+    <p style="font-size:200" id="Five">5</p>
+    <p style="font-size:200" id="Six">6</p>
+    <p style="font-size:200" id="Seven">1+2+3+4+5+6</p>
+    </div> -->
+
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+
+<script>
+
+    // Start loading animation.
+    
+    // Get auth_token on load.
+
+    // Initialise with data structures to save data.
+      
+    // Fire the first round the ajax calls to collect data and fill it in the datastructures.
+      
+    // Stop loading animation.
+
+    //Fire the ajax calls in a timer every 15 mins to collect data and rewrite the data in data structures starting with the end of initial call.
+
+    // Start the UI Slide-show after the end of loading animations.
+
+    var socket = io.connect('http://localhost:8000/');
+//var socket = io();
+    // var i = 1;
+    // timed = 60000;
+    // var slide_timer = [60000,120000,60000,60000,60000,60000,60000];
+
+    // var timer = $.timer(function() {
+    //     i++;
+    //     if ( i > 7 ){
+    //       i = 1;
+    //     }
+    //     timed = slide_timer[(i-1)];
+    //     $('#text').html((i.toString())).fadeIn('fast');
+    // });
+
+    // timer.set({ time:timed,autostart:true });
+
+
+
+
+
+  
+
+  socket.on('tweet', function(tweet){
+    //alert(msg);
+    alert(tweet.user.profile_image_url);
+    alert(tweet.text);
+    alert(tweet.screen_name);
+  });
+
+</script>
+  </body>
+
+</html>

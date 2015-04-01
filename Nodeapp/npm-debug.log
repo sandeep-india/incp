@@ -1,0 +1,67 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'cors' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json socket-chat-example@0.0.1 No repository field.
+6 warn package.json socket-chat-example@0.0.1 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'cors', null ]
+9 verbose cache add name=undefined spec="cors" args=["cors",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'cors',
+10 verbose parsed url   path: 'cors',
+10 verbose parsed url   href: 'cors' }
+11 silly lockFile 3b1b74c9-cors cors
+12 verbose lock cors C:\Users\Rafter-pc\AppData\Roaming\npm-cache\3b1b74c9-cors.lock
+13 silly lockFile 3b1b74c9-cors cors
+14 silly lockFile 3b1b74c9-cors cors
+15 verbose addNamed [ 'cors', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile 9fcb5857-cors cors@
+18 verbose lock cors@ C:\Users\Rafter-pc\AppData\Roaming\npm-cache\9fcb5857-cors.lock
+19 silly addNameRange { name: 'cors', range: '*', hasData: false }
+20 verbose request where is /cors
+21 verbose request registry https://registry.npmjs.org/
+22 verbose request id b20b6ca8b264ad2f
+23 verbose url raw /cors
+24 verbose url resolving [ 'https://registry.npmjs.org/', './cors' ]
+25 verbose url resolved https://registry.npmjs.org/cors
+26 verbose request where is https://registry.npmjs.org/cors
+27 info trying registry request attempt 1 at 10:54:34
+28 http GET https://registry.npmjs.org/cors
+29 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+30 info trying registry request attempt 2 at 10:54:56
+31 http GET https://registry.npmjs.org/cors
+32 info retry will retry, error on last attempt: Error: getaddrinfo EAGAIN
+33 info trying registry request attempt 3 at 10:56:06
+34 http GET https://registry.npmjs.org/cors
+35 silly lockFile 9fcb5857-cors cors@
+36 silly lockFile 9fcb5857-cors cors@
+37 error network getaddrinfo ENOTFOUND
+37 error network This is most likely not a problem with npm itself
+37 error network and is related to network connectivity.
+37 error network In most cases you are behind a proxy or have bad network settings.
+37 error network
+37 error network If you are behind a proxy, please make sure that the
+37 error network 'proxy' config is set properly.  See: 'npm help config'
+38 error System Windows_NT 6.2.9200
+39 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "cors"
+40 error cwd C:\Users\Rafter-pc\Desktop\Nodeapp
+41 error node -v v0.10.33
+42 error npm -v 1.4.28
+43 error syscall getaddrinfo
+44 error code ENOTFOUND
+45 error errno ENOTFOUND
+46 verbose exit [ 1, true ]
